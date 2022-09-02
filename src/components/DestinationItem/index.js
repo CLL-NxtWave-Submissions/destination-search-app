@@ -5,10 +5,10 @@ const DestinationItem = props => {
   const {name, imgUrl} = destinationItemData
 
   return (
-    <div className="destination-item-container">
+    <li className="destination-item-container">
       <img className="destination-item-image" src={imgUrl} alt={name} />
       <p className="destination-item-name">{name}</p>
-    </div>
+    </li>
   )
 }
 

@@ -53,14 +53,14 @@ export default class DestinationSearch extends Component {
           />
         </div>
 
-        <div className="destination-items-container">
+        <ul className="destination-items-container">
           {destinationItemList.map(currentDestinationItem => (
             <DestinationItem
               key={currentDestinationItem.id}
               destinationItemData={currentDestinationItem}
             />
           ))}
-        </div>
+        </ul>
       </div>
     )
   }
