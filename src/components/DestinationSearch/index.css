@@ -25,9 +25,18 @@
   align-items: center;
   border-radius: 0.4rem;
   background-color: #f1f5f9;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  margin-right: 0.5rem;
 }
 
 .search-icon-img {
-  height: 2rem;
-  width: 2rem;
+  height: 1.2rem;
+  width: 1.2rem;
 }

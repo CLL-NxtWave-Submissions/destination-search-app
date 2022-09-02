@@ -18,8 +18,11 @@ export default class DestinationSearch extends Component {
     const {destinationsList} = this.props
     const userSearchInput = userSearchInputChangeEvent.target.value
     const filteredDestinationItemsData = destinationsList.filter(
-      currentDestinationItem =>
-        currentDestinationItem.name.includes(userSearchInput),
+      currentDestinationItem => {
+        const lowerCaseName = currentDestinationItem.name.toLowerCase()
+        const lowerCaseUserSearchInput = userSearchInput.toLowerCase()
+        return lowerCaseName.includes(lowerCaseUserSearchInput)
+      },
     )
 
     this.setState({
@@ -35,7 +38,14 @@ export default class DestinationSearch extends Component {
       <div className="destination-search-bg-container">
         <h1 className="destination-search-header">Destination Search</h1>
         <div className="search-bar">
-          <input type="search" name="search-input" value={searchString} />
+          <input
+            className="search-input"
+            placeholder="Search"
+            type="search"
+            name="search-input"
+            value={searchString}
+            onChange={this.userSearchInputChangeHandler}
+          />
           <img
             className="search-icon-img"
             src="https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png"
